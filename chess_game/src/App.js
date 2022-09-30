@@ -1,5 +1,4 @@
 import './App.css';
-import React, { Link } from 'react';
 
 function App() {
   return (
