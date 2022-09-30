@@ -58,11 +58,6 @@ class Brisca:
             self.on_render()
             if self.temp:
                 time.sleep(2)
-
-            #     cards = ['hearts_2', 'spades_7', 'clubs_11']
-            #     for index, card in enumerate(cards):
-            #         self.screen.player_boards[0].player = 'gadhi'
-            #         self.screen.add_card(card + '.png', 'gadhi', index)
                 self.temp = False
         self.on_cleanup()
 
@@ -133,10 +128,6 @@ class Brisca:
             next_card = response.get('next_card')[0]
             self.screen.add_card(
                 next_card + '.png', self.client.username, self.screen.last_picked_index, self.screen.last_picked_pos)
-            # target_board = list(
-            #     filter(lambda x: x.player == winner, self.screen.player_boards))[0]
-            # for player_board in self.screen.player_boards:
-            #     player_board.selected_card.target_pos = target_board.winns.rect.center
             self.screen.main_board.turn.text = winner
         elif status == 'game_finished':
             score = 0
