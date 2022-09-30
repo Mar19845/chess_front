@@ -56,6 +56,7 @@ function App() {
           <a
             href="../brisca_client/brisca.exe"
             download
+            color = "#e4717a" 
           >
             Click to download
           </a>
