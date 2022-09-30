@@ -54,7 +54,7 @@ function App() {
             Git
           </p>
           <a
-            href="../brisca_client/brisca.exe"
+            href="https://github.com/Carlos21122000/DownloadGame"
             download
             color = "#e4717a" 
           >
