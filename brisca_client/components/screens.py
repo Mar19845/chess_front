@@ -32,7 +32,7 @@ class Login(Screen):
     def __init__(self, login):
         Screen.__init__(self)
 
-        self.input = TextInput(52, [0, 0, 0], [0, 255, 0])
+        self.input = TextInput(52, [139, 224, 139], [255, 255, 255])
         self.input.rect.center = self.rect.center
         self.add(self.input)
 
@@ -68,7 +68,7 @@ class Lobby(Screen):
         self.available_rooms = UIList(
             [], 42, 315, self.join_room, Rect(0, 0, 640, 720))
 
-        list_label = Label('Join Room:', 42, [255, 0, 0])
+        list_label = Label('Join Room:', 42, [0, 0, 0])
         list_label.rect.left = 200
         list_label.rect.centery = int(self.available_rooms.rect.height * 0.4)
         self.add(list_label)
@@ -81,18 +81,25 @@ class Lobby(Screen):
             self.available_rooms.rect.height * 0.4)
         self.add(create_label)
 
-        self.input = TextInput(42, [0, 0, 0], [255, 0, 0])
+        self.input = TextInput(42, [0, 0, 0], [255, 255, 255])
         self.input.rect.top = create_label.rect.bottom + 20
         self.input.rect.centerx = create_label.rect.centerx
         self.add(self.input)
-
+        
         self.create_button = Button('Create', 42, [0, 0, 0], [
-            0, 0, 255], self.create_room)
+            255, 255, 255], self.create_room)
         self.create_button.rect.top = self.input.rect.bottom + 20
         self.create_button.rect.centerx = self.input.rect.centerx
         self.add(self.create_button)
         self.buttons.append(self.create_button)
-
+        '''
+        self.get_button = Button('Get Rooms', 42, [0, 0, 0], [
+            255, 255, 255], self.update)
+        self.get_button.rect.top = self.input.rect.bottom + 80
+        self.get_button.rect.centerx = list_label.rect.centery
+        self.add(self.get_button)
+        self.buttons.append(self.get_button)
+        '''
     def create_room(self):
         self.client.create_room(self.client.socket, self.input.text)
 

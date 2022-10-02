@@ -2,7 +2,7 @@ import os
 from pygame.sprite import Sprite, Rect, RenderPlain
 from pygame.font import Font
 
-FONT = os.path.join('assets', 'upheavtt.ttf')
+FONT = os.path.join('assets', 'Abbieshire.ttf')
 
 
 class Label(Sprite):

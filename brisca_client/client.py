@@ -55,12 +55,6 @@ class Client:
             elif option == "7":
                 self.disconnect(socket)
 
-            # content = {"action": "create_room", "user": self.username, "room":"new room"}
-
-            # content = {"action": "join_room", "user": self.username, "room":"new room"}
-            # socket.write(content)
-            # self.stop = True
-            # input()
 
     def login(self, socket):
         socket.write({"action": "login", "user": self.username})
